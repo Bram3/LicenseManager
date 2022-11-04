@@ -65,7 +65,7 @@ public class ProductController : ControllerBase
         product.OwnerId = id;
         _context.Products.Add(product);
         await _context.SaveChangesAsync();
-        return Ok(new Response<string> { Status = "Success", Data = "Product created successfully!" });
+        return Ok(new Response<Product> { Status = "Success", Data = product });
     }
 
     // PUT api/product/5
