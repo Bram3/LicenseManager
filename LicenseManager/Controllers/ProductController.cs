@@ -69,7 +69,7 @@ public class ProductController : ControllerBase
     }
 
     // PUT api/product/5
-    [HttpPut("{productId}")]
+    [HttpPut("{productId:guid}")]
     public async Task<IActionResult> Put(Guid productId, [FromBody] Product product)
     {
         var user = await _userManager.GetUserAsync(User);

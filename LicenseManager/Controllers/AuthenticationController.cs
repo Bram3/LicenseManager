@@ -80,7 +80,7 @@ public class AuthenticationController : ControllerBase
         return Ok(new Response<string> { Status = "Success", Data = "User created successfully!" });
     }
 
-    private JwtSecurityToken GetToken(List<Claim> authClaims)
+    private JwtSecurityToken GetToken(IEnumerable<Claim> authClaims)
     {
         var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
 

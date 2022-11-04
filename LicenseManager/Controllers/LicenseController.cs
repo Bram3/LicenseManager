@@ -65,7 +65,7 @@ public class LicenseController : ControllerBase
 
         _context.Licenses.Add(license);
         await _context.SaveChangesAsync();
-
+        
         return Ok(new Response<License> { Status = "Success", Data = license });
     }
 }
